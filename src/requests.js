@@ -1,6 +1,6 @@
-const dotenv = require('dotenv')
+// const dotenv = require('dotenv').config({path:'../'})
 
-const API_KEY = process.env.API_KEY
+const API_KEY = 'a29fd5631c37293dbdf72e664eaacbdc'
 
 const requests = {
     fetchTrending : `/trending/all/week?api_key=${API_KEY}&language=en-US`,
