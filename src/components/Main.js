@@ -10,9 +10,10 @@ export const Main = () => {
         <div>
             <Navigation />
             <Top />
-            <Row title='Trending movies' fetchUrl={requests.fetchTrending}/>
-            <Row title='Action movies' fetchUrl={requests.fetchActionMovies}/>
+            <Row title='Trending movies' fetchUrl={requests.fetchTrending} isLarge/>
+            <Row title='Action movies' fetchUrl={requests.fetchActionMovies} />
             <Row title='Romantic movies' fetchUrl={requests.fetchRomanticMovies}/>
+            <Row title='Comming soon' fetchUrl={requests.CommingSoon} commingSoon/>
             <Row title='Horror movies' fetchUrl={requests.fetchHorrorMovies}/>
             <Row title='Thriller movies' fetchUrl={requests.fetchThrillerMovies}/>
             <Row title='Documentary movies' fetchUrl={requests.fetchDocumentaryMovies}/>

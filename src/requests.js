@@ -11,7 +11,8 @@ const requests = {
     fetchRomanticMovies:`/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=10749`,
     fetchThrillerMovies:`/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=53`,
     fetchDocumentaryMovies:`/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=99`,
-    fetchSearch:`/search/multi?api_key=${API_KEY}&language=en-US&query=`
+    fetchSearch:`/search/multi?api_key=${API_KEY}&language=en-US&query=`,
+    fetchCommingSoon:`https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US`
 }
 
 

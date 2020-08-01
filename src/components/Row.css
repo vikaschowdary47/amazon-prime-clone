@@ -16,16 +16,23 @@
 .img__poster{
     object-fit: contain;
     width: 100%;
-    max-height: 200px;
+    max-height: 150px;
     transition: transform 400ms;
     margin-right: 15px;
     }
 
 .img__poster:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.07);
     opacity: 0.9;
 }
+.poster__imagesLarge{
+ max-height: 210px;
+}
+.poster__imagesLarge:hover {
+    transform: scale(1.09);
+}
+
 .row{
     width: 98%;
     margin: auto;
