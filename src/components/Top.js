@@ -26,7 +26,7 @@ export const Top = () => {
     console.log(movies)
     return (
         // <div className="row">
-            <Carousel controls='false'>
+            <Carousel controls='false' wrap="false">
                 
             {/* <div className="top__images"> */}
         {movies.map(movie => (
