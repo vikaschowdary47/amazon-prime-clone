@@ -5,7 +5,7 @@ import logo from '../images/prime.svg'
 export const Navigation = () => {
     return (
 
-        <Navbar style={{backgroundColor:"#1a242f",width:"100%"}}>
+        <Navbar sticky="top" style={{backgroundColor:"#1a242f",width:"100%"}}>
         <Navbar.Brand href="#home">
           <img
             src={logo}

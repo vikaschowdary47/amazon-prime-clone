@@ -14,7 +14,7 @@ export const Row = ({title,fetchUrl,isLarge,commingSoon}) => {
         const getMovies = async() => {
             await instance.get(fetchUrl)
             .then(res => {
-             console.log(res.data.results)
+            //  console.log(res.data.results)
              setMovies(res.data.results)
             })
         }
@@ -29,14 +29,6 @@ export const Row = ({title,fetchUrl,isLarge,commingSoon}) => {
         
     },[fetchUrl])
 
-   
-    //  if(commingSoon){
-    //     await axios.get(fetchUrl)
-    //     .then(res => {
-    //         console.log(res)
-    //         // setMovies(res.data.results)
-    //        })
-    // } else {
 
     return (
         <div className="row">
