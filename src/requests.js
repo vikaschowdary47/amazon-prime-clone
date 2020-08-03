@@ -12,7 +12,7 @@ const requests = {
     fetchThrillerMovies:`/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=53`,
     fetchDocumentaryMovies:`/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=99`,
     fetchSearch:`/search/multi?api_key=${API_KEY}&language=en-US&query=`,
-    fetchCommingSoon:`https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US`
+    fetchCommingSoon:`/movie/upcoming?api_key=${API_KEY}&language=en-US`
 }
 
 
