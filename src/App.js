@@ -21,7 +21,7 @@ function App() {
    <Route path='/home'>
      <Main />
    </Route>
-   <Route exact path='search/:q' component={Search} />
+   <Route exact path='/search' component={Search} />
 
    </Switch>
     </Container>
