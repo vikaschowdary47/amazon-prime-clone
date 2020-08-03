@@ -8,7 +8,7 @@ import requests from '../requests'
 export const Main = () => {
     return (
         <div>
-            <Navigation />
+            <Navigation searchBar/>
             <Top />
             <Row title='Trending movies' fetchUrl={requests.fetchTrending} isLarge/>
             <Row title='Action movies' fetchUrl={requests.fetchActionMovies} />

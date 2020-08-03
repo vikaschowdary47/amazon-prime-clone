@@ -33,6 +33,11 @@
     transform: scale(1.09);
 }
 
+.poster_different{
+    max-height: 210px;
+
+}
+
 .row{
     width: 98%;
     margin: auto;

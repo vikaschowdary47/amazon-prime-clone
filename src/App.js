@@ -4,6 +4,8 @@ import {Navigation} from './components/Navigation'
 import {Main} from './components/Main'
 import Container from 'react-bootstrap/Container'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
+import {Search} from './components/Search'
+
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
    <Route path='/home'>
      <Main />
    </Route>
+   <Route exact path='/:q' component={Search} />
+
    </Switch>
     </Container>
     </Router>
