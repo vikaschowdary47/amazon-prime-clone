@@ -16,14 +16,11 @@ export const Navigation = ({searchBar}) => {
   {
     e.preventDefault();
     setQuery(search)
-    if(search !== null){
-      route();
-    }
+    // if(search !== null){
+    //   route();
+    // }
   }
 
-  const route = () => {
-    <Link to='/search '></Link>
-  }
 
     return (
       <>
@@ -44,7 +41,7 @@ export const Navigation = ({searchBar}) => {
         <div style={{marginRight:'20px',marginLeft:'30px',display:'flex',flexDirection:'row-reverse',cursor:'pointer',overflow:'hidden'}}>
           <img src={icon} alt="search" width='25' height='25' style={{padding:'2px'}} onClick={() => setShowForm(!showForm)}/>
           <div className="search__form">
-            { showForm ? <Form style={{marginRight:'20px'}} onSubmit={onSubmit}>
+            { showForm ? <Form style={{marginRight:'20px'}} onSubmit={onSubmit && <Link to={`/search/${query}`}></Link>}>
         <Form.Control type="text" placeholder="Search" className=" mr-sm-4" value={search} onChange={(e) => {setSearch(e.target.value)}}/>
         </Form> 
         : null}
