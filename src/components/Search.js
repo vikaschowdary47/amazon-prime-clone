@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import queryString from 'query-string'
+import './Search.css'
+import {Navigation} from './Navigation'
+
 
 export const Search = (props) => {
 const API_KEY = 'a29fd5631c37293dbdf72e664eaacbdc'
@@ -23,14 +26,26 @@ const baseUrl = "https://image.tmdb.org/t/p/original"
                 })
             }
         searchMovies();
-    },[])
+    },[props.location.search])
     
     // console.log(movies);
     return (
         <div>
+            <Navigation searchBar/>
+
+        <div className='search__body'>
+
+            <div className="search__poster">
             {movies.map(item => (
-                <img key={item.id} src={`${baseUrl}${item.backdrop_path}`} alt={item.title} />
+                <div>
+                <img key={item.id} 
+                src={`${baseUrl}${item.backdrop_path}`} 
+                alt={item.title} 
+                className="search__posters"/>
+                </div>
             ))}
+            </div>
+        </div>
         </div>
     )
 }

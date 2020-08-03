@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
 import logo from '../images/prime.svg'
 import icon from '../images/search.png'
 import {Link} from 'react-router-dom'
@@ -10,13 +11,12 @@ import {Link} from 'react-router-dom'
 export const Navigation = ({searchBar}) => {
   const [showForm,setShowForm] = useState(false);
   const [search,setSearch] = useState('');
-  const [query,setQuery] = useState('');
+
   
 
   const onSubmit = e => 
   {
     e.preventDefault();
-    setQuery(search)
   }
 
 
@@ -35,13 +35,18 @@ export const Navigation = ({searchBar}) => {
         
         {searchBar &&
         <div style={{marginRight:'20px',marginLeft:'30px',display:'flex',flexDirection:'row-reverse',cursor:'pointer',overflow:'hidden'}}>
-          <img src={icon} alt="search" width='25' height='25' style={{padding:'2px'}} onClick={() => setShowForm(!showForm)}/>
+          <img src={icon} alt="search" width='25' height='25' style={{padding:'2px',overflowX:'none'}} onClick={() => setShowForm(!showForm)}/>
           <div className="search__form">
             { showForm ?  <Form inline style={{marginRight:'20px'}} onSubmit={onSubmit}>
-         <Form.Control type="text" placeholder="Search" className=" mr-sm-2" value={search} onChange={(e) => {setSearch(e.target.value)}}/>
+              <Form.Row>
+                <Col>
+         <Form.Control type="text" placeholder="Search" className=" mr-sm-5" value={search} onChange={(e) => {setSearch(e.target.value)}}/></Col>
          <Link to={`/search/?q=${search}`}>
+           <Col>
         <Button style={{width:'100px'}} variant="outline-success">Search</Button>
+        </Col>
         </Link>
+        </Form.Row>
         </Form> 
         : null}
         </div>
