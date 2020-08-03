@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import logo from '../images/prime.svg'
+import icon from '../images/search.png'
 
 export const Navigation = () => {
     return (
@@ -15,6 +16,7 @@ export const Navigation = () => {
             alt="React Bootstrap logo"
           />
         </Navbar.Brand>
+        <div className="float-right"><img src={icon} width='30' height='30'/></div>
       </Navbar>
     )
 }

@@ -1,18 +1,12 @@
-/* .top__images {
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    margin: auto;
-    width: 100%;
-}
 
-.top__images::-webkit-scrollbar{
-    display: none;
-}
- */
 
 .top__image{
-    /* width: 100%; */
     height: 500px;
 }
 
+.details{
+    position: absolute;
+    top:-50px;
+    z-index: 3;
+    color: red;
+}

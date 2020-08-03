@@ -18,29 +18,24 @@ export const Top = () => {
                     // console.log(reduce);
                     setMovies(reduce);
 
-                // return req;
         
         }
         fetchData();
     },[])
-    console.log(movies)
+
     return (
-        // <div className="row">
-            <Carousel controls='false' wrap="false">
+            <Carousel>
                 
-            {/* <div className="top__images"> */}
         {movies.map(movie => (
-            <Carousel.Item controls='false'>
+            <Carousel.Item key={movie.id}>
             <img src={`${baseUrl}${movie.backdrop_path}`} 
             alt={movie.title}
             key={movie.id} 
             className="top__image d-block w-100"/>
+            <small className="details">details</small>
             </Carousel.Item>
         ))}
         
-        {/* </div> */}
-        
         </Carousel>
-        // </div>
     )
 }
