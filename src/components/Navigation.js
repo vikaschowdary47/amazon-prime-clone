@@ -23,7 +23,14 @@ export const Navigation = ({searchBar}) => {
     return (
       <>
       <Navbar sticky="top" style={{backgroundColor:"#1a242f",width:"100%"}} className="justify-content-between">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
+          {searchBar ? <Link to='/home'><img
+            src={logo}
+            width="80"
+            height="35"
+            className="d-inline-block align-top ml-15"
+            alt="amazon"
+          /></Link> :
           <img
             src={logo}
             width="80"
@@ -31,17 +38,18 @@ export const Navigation = ({searchBar}) => {
             className="d-inline-block align-top ml-15"
             alt="amazon"
           />
+    }
         </Navbar.Brand>
         
         {searchBar &&
         <div style={{marginRight:'20px',marginLeft:'30px',display:'flex',flexDirection:'row-reverse',cursor:'pointer',overflow:'hidden'}}>
-          <img src={icon} alt="search" width='25' height='25' style={{padding:'2px',overflowX:'none'}} onClick={() => setShowForm(!showForm)}/>
+        <img src={icon} alt="search" width='25' height='25' style={{padding:'2px',overflowX:'none'}} onClick={() => setShowForm(!showForm)}/>
           <div className="search__form">
             { showForm ?  <Form inline style={{marginRight:'20px'}} onSubmit={onSubmit}>
               <Form.Row>
                 <Col>
          <Form.Control type="text" placeholder="Search" className=" mr-sm-5" value={search} onChange={(e) => {setSearch(e.target.value)}}/></Col>
-         <Link to={`/search/?q=${search}`}>
+         <Link exact to={`/search/?q=${search}`}>
            <Col>
         <Button style={{width:'100px'}} variant="outline-success">Search</Button>
         </Col>
