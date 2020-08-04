@@ -5,6 +5,7 @@ import {Main} from './components/Main'
 import Container from 'react-bootstrap/Container'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import {Search} from './components/Search'
+import {Movie} from './components/Movie'
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
      <Main />
    </Route>
    <Route exact path='/search' component={Search} />
-
+    <Route exact path='/movie' component={Movie} />
    </Switch>
     </Container>
     </Router>

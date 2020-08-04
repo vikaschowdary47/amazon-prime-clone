@@ -28,7 +28,7 @@ const baseUrl = "https://image.tmdb.org/t/p/original"
         searchMovies();
     },[props.location.search])
     
-    // console.log(movies);
+    console.log(movies);
     return (
         <div>
             <Navigation searchBar/>
@@ -37,12 +37,21 @@ const baseUrl = "https://image.tmdb.org/t/p/original"
 
             <div className="search__poster">
             {movies.map(item => (
-                <div>
+                    // <div className="item__body">
+                    <div className="group">
+                        <div className="image">
                 <img key={item.id} 
                 src={`${baseUrl}${item.backdrop_path}`} 
-                alt={item.title} 
+                alt={item.name} 
                 className="search__posters"/>
                 </div>
+                <div className="detail">
+            <h6 style={{color:'white',display:'inline-block'}}>{`${item.name ? item.name : item.title}`}</h6><br />
+            <small>
+                {`${item.first_air_date ? item.first_air_date : item.release_date}`}</small>
+            </div>
+                </div>
+                // </div>
             ))}
             </div>
         </div>
