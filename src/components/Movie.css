@@ -1,6 +1,11 @@
 .image{
-    margin: 15px auto;
+    margin: 30px auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.movie__details{
+    margin: auto;
+    text-align: center;
 }

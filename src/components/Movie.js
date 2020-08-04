@@ -13,7 +13,7 @@ const baseUrl = "https://image.tmdb.org/t/p/original"
     useEffect(() => {
         const value = queryString.parse(props.location.search)
         const queries = value.id
-        console.log(queries)
+        // console.log(queries)
         const getDetails = async () => {
             await axios.get(`https://api.themoviedb.org/3/movie/${queries}?api_key=${API_KEY}&language=en-US`)
                 .then(res => {
@@ -22,16 +22,27 @@ const baseUrl = "https://image.tmdb.org/t/p/original"
                 })
         }
         getDetails();
-    },[])
+    },[props.location.search])
 
     return (
         <div>
             <div className='image'>
             <img src={`${baseUrl}${detail.poster_path}`} 
+            alt={detail.original_title}
             width='200'
             height='200'
             />
+            <h1><b>{`${detail.name ? detail.name : detail.title}`}</b></h1>
             </div>
+            <div className='movie__details'>
+                <ul>
+             <li>Status:{detail.status}</li>
+             <li>Release Date: {detail.release_date} </li>
+    <li>Goto Movie: <a href={detail.homepage} >{detail.homepage}</a></li>
+    <li style={{textAlign:'left',marginLeft:'50px'}}>Overview:<p>{detail.overview}</p></li>
+                </ul>
+            </div>
+
         </div>
     )
 }
